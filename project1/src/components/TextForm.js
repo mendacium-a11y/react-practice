@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 
 export default function TextForm({heading}) {
     const[text,setText] = useState('Enter text')
+    const[click,setClick] = useState(0)
 
     const changeToUpper = () =>{
         let newText = text.toLocaleUpperCase()
@@ -14,9 +15,13 @@ export default function TextForm({heading}) {
         setText(event.target.value)
     }
 
-    const textOnClick = ()=> {
-        setText("")
-    }
+    const textOnClick = () => {
+        if (click === 0) {
+          setText("");
+        }
+        setClick(click + 1);
+      };
+      
 
     return (
         <div>
