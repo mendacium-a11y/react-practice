@@ -18,8 +18,9 @@ export default function TextForm({heading}) {
     const textOnClick = () => {
         if (click === 0) {
           setText("");
+          setClick(click + 1);
         }
-        setClick(click + 1);
+        
       };
       
 
