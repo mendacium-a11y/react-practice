@@ -1,11 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 
 
 
-export default function Navbar({title="hello", about}) {
+
+export default function Navbar({ title = "hello", about, toggleMode, mode }) {
+
+
+
+  
+
+
+
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    
+
+
+    <nav className={`navbar navbar-expand-lg bg-dark bg-body-tertiary`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">{title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +38,7 @@ export default function Navbar({title="hello", about}) {
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>
                 <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><hr className="dropdown-divider"/></li>
+                <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
@@ -35,15 +47,22 @@ export default function Navbar({title="hello", about}) {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Search</button>
+            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
       </div>
+      <div className="form-check form-switch">
+        <input onClick={toggleMode} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {mode==='light'?'dark':'light'} mode</label>
+      </div>
+
     </nav>
   )
 }
 
 
-Navbar.propTypes = {title:PropTypes.string,
-                    about:PropTypes.string}
+Navbar.propTypes = {
+  title: PropTypes.string,
+  about: PropTypes.string
+}

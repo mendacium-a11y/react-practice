@@ -25,6 +25,8 @@ export default function TextForm({heading}) {
       
 
     return (
+        <>
+        <div className="container">
         <div>
             <div className="mb-3">
                 <h3>{heading}</h3>
@@ -33,5 +35,11 @@ export default function TextForm({heading}) {
                 <button className="btn btn-primary" onClick={changeToUpper}>Click to UpperCase</button>
             </div>
         </div>
+        </div>
+        <div className="container">
+            <h2>Text Summary</h2>
+            <p>you have {(text.split(" ").length)} words and {text.length} letters</p>
+        </div>
+        </>
     )
 }
