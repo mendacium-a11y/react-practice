@@ -6,17 +6,8 @@ import PropTypes from 'prop-types'
 
 export default function Navbar({ title = "hello", about, toggleMode, mode }) {
 
-
-
-  
-
-
-
-
   return (
     
-
-
     <nav className={`navbar navbar-expand-lg bg-dark bg-body-tertiary`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">{title}</a>

@@ -26,13 +26,14 @@ export default function TextForm({heading}) {
 
     return (
         <>
-        <div className="container">
+        <div className="container my-5">
         <div>
             <div className="mb-3">
-                <h3>{heading}</h3>
+                <h3 className='my-3'>{heading}</h3>
                 {/* <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label> */}
-                <textarea value={text} onClick={textOnClick} onChange={handleOnChange} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button className="btn btn-primary" onClick={changeToUpper}>Click to UpperCase</button>
+                <textarea value={text} onClick={textOnClick} onChange={handleOnChange} className="form-control" id="exampleFormControlTextarea1" 
+                 rows="8" ></textarea>
+                <button className="btn btn-primary my-3" onClick={changeToUpper}>Click to UpperCase</button>
             </div>
         </div>
         </div>
