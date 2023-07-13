@@ -45,10 +45,11 @@ export default function Navbar({ title = "hello", about, toggleMode, mode }) {
       </div>
       <div className="form-check form-switch">
         <input onClick={toggleMode} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {mode==='light'?'dark':'light'} mode</label>
+          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {mode === 'light' ? 'dark' : 'light' } mode</label>
       </div>
 
     </nav>
+    
   )
 }
 

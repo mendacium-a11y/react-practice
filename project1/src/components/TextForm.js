@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-export default function TextForm({heading}) {
+export default function TextForm({heading, border}) {
     const[text,setText] = useState('Enter text')
     const[click,setClick] = useState(0)
 
@@ -39,7 +39,7 @@ export default function TextForm({heading}) {
         </div>
         <div className="container">
             <h2>Text Summary</h2>
-            <p>you have {(text.split(" ").length)} words and {text.length} letters</p>
+            <p>you have {(text.trim().split(" ").filter(word => word !== '').length)} words and {text.length} letters</p>
         </div>
         </>
     )
