@@ -6,7 +6,7 @@ function Carousel1() {
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block min-h-[50vh] w-auto"
+          className="d-block max-h-screen w-screen"
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="First slide"
         />
@@ -17,7 +17,7 @@ function Carousel1() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block min-h-[50vh] w-auto"
+          className="d-block max-h-screen w-screen"
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Second slide"
         />
@@ -29,7 +29,7 @@ function Carousel1() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block h-[50vh] "
+          className="d-block max-h-screen w-screen "
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Third slide"
         />
