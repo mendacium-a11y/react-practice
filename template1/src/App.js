@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar';
 import Carousel from './Components/Carousel';
 import Slider from './Components/Slider/Slider';
 import Testimonails from './Components/Testimonails';
+import CardFlip from './Components/CardFlip/CardFlip';
+import Footer from './Components/Footer';
 
 
 
@@ -55,8 +57,11 @@ function App() {
           <Slider />
         </div>
       </div>
-      <div className="bg-slate-200 my-[-12vh] py-[8vh]">
+      <div className="bg-white my-[-12vh] py-[8vh]">
       <Testimonails /></div>
+      <CardFlip/>
+      <Footer/>
+      
 
 
 

@@ -9,7 +9,7 @@ function Testimonails() {
     stars.push(<FaStar key={i} />);
   }
   return (
-    <div className="sm:container mx-auto bg-slate-200">
+    <div className="sm:container mx-auto bg-white">
         <div className="flex justify-center items-center my-5"><FaQuoteRight size='40' className='text-center'/></div>
         <h1 className="text-2xl font-bold text-center">Happy Customers</h1>
         <div className="flex flex-wrap">
