@@ -1,0 +1,23 @@
+/* styles.css */
+/* CSS for the fade-up animation */
+@keyframes fadeUp {
+    0% {
+      top: 0%;
+      height: 90%;
+    }
+    50% {
+      top: 50%;
+      height: 50%;
+    }
+    100%{
+        top: 100%;
+        height: 0%;
+    }
+
+  }
+  
+  .fade-up {
+    animation: fadeUp 0.8s linear; /* Adjust the animation duration and timing function as needed */
+    /* height: 100%; */
+  }
+  
