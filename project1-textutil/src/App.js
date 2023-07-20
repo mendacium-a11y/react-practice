@@ -1,11 +1,10 @@
-
 import './App.css';
 import Accordian from './components/Accordian';
 import Alerts from './components/Alerts';
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm'
 import React, { useState } from 'react';
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 
 
 
@@ -44,12 +43,15 @@ function App() {
   }
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<TextForm/>} />
-        
-        <Route path="/about" element={<Accordian />} />
-      </Routes>
+      <Router>
+        <Navbar />
+        <Routes>
+
+          <Route path="/" element={<TextForm />} />
+
+          <Route path="/about" element={<Accordian />} />
+        </Routes>
+      </Router>
     </>
     // <>
 

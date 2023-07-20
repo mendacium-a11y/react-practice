@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "./styles.css"
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 
 
@@ -12,7 +12,7 @@ export default () => {
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     autoplay: {
-      delay: 100, // Set the delay in milliseconds
+      delay: 10, // Set the delay in milliseconds
       disableOnInteraction: false, // Allow interaction to prevent autoplay
     },
     mode: "free-snap",
@@ -109,7 +109,7 @@ function Arrow(props) {
 function FoodCard({img}) {
   return (
     <Card className="w-3/4 h-auto rounded-none">
-      <Card.Img className="h-64 w-auto rounded-none" variant="top" src={img} />
+      <Card.Img className="h-64 w-auto rounded-none object-fit-cover" variant="top" src={img} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>

@@ -44,7 +44,7 @@ function First({ first, heading1, heading2, img, heading3 = "" }) {
         <img src={img} alt="" className="rounded-xl shadow-2xl object-fit-cover w-[90%]" />
         <div
           ref={overlayRef}
-          className="absolute w-full bg-orange-500 rounded-xl"
+          className="absolute w-[90%] bg-orange-300 rounded-xl"
         ></div>
       </div>
     </div>

@@ -6,37 +6,37 @@ function Carousel1() {
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block max-h-screen w-screen"
+          className="d-block max-h-screen min-h-[80vh] w-screen object-fit-cover"
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h1 className="absolute top-[-43vh] text-8xl w-full">First slide label</h1>
-          <p className="absolute top-[-32vh] text-3xl w-full">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h1 className="md:absolute top-[-43vh] text-5xl sm:text-6xl  md::text-8xl w-full">First slide label</h1>
+          <p className="md:absolute top-[-32vh] text-lg md:text-3xl w-full">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block max-h-screen w-screen"
+          className="d-block max-h-screen min-h-[80vh] w-screen object-fit-cover"
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h1 className="absolute top-[-43vh] text-8xl w-full">Second slide label</h1>
-          <p className="absolute top-[-32vh] text-3xl w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h1 className="md:absolute top-[-43vh] text-5xl  sm:text-6xl  md::text-8xl w-full">Second slide label</h1>
+          <p className="md:absolute top-[-32vh] text-lg md:text-3xl w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block max-h-screen w-screen "
+          className="d-block max-h-screen min-h-[80vh] w-screen object-fit-cover"
           src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Third slide"
         />
 
         <Carousel.Caption>
-        <h1 className="absolute top-[-43vh] w-full text-8xl">Third slide label</h1>
-          <p className="absolute top-[-32vh] text-3xl text-lg w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1 className="md:absolute top-[-43vh] w-full text-5xl  ssm:text-6xl  md::text-8xl">Third slide label</h1>
+          <p className="md:absolute top-[-32vh] text-lg md:text-3xl w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -8,13 +8,16 @@ import { FaStarOfLife, FaBars } from "react-icons/fa6";
 function Navbar() {
 
   const [toggleMenu, setToggleMenu] = useState('hidden')
+  const [buttonBg, setButtonBg] = useState('border-black bg-black text-white')
 
   const MenuOnClick = () => {
     if (toggleMenu === "hidden") {
       setToggleMenu('')
+      setButtonBg('bg-white border-white text-black')
     }
     else {
       setToggleMenu('hidden')
+      setButtonBg(' border-black bg-black text-white')
     }
   }
 
@@ -30,9 +33,15 @@ function Navbar() {
           <NavbarElement text="Contact Us" />
 
         </ul>
-        <div className="sm:hidden border-3 border-zinc-700 p-2 rounded-xl">
-          <FaBars className=" " onClick={MenuOnClick} />
-          <div className={`${toggleMenu} h-[50vh] w-screen absolute left-0 top-28  bg-gray-500 `}></div>
+        <div className={`sm:hidden border-2  ${buttonBg} p-2 rounded-xl `}>
+          <FaBars size='1.8em' className='' onClick={MenuOnClick} />
+          <div className={`${toggleMenu} h-[80vh] w-screen absolute left-0 
+          top-28 flex justify-start items-start ps-5 flex-col bg-white `}>
+            <NavbarElement text="Home"/>
+            <NavbarElement text="Menu" />
+            <NavbarElement text="Gallery" />
+            <NavbarElement text="Contact Us" />
+          </div>
         </div>
 
 
@@ -43,7 +52,7 @@ function Navbar() {
 }
 
 const NavbarElement = ({ text }) => (
-  <div className="sidebar-icon group">
+  <div className="sidebar-icon group my-10 sm:my-0">
     <p className="font-bold text-2xl">{text}</p>
   </div>
 );
