@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar darkmode={toggleBg}/>
         <Routes>
 
           <Route path="/" element={<TextForm />} />
