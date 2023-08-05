@@ -1,4 +1,7 @@
 import Login from "./Login";
+import ResetPassword from "./ResetPassword";
+import SignUp from "./Signup";
+
 
 export default function AuthModal() {
     return (
@@ -15,7 +18,7 @@ export default function AuthModal() {
                                 X
                             </button>
                         </div>
-                        <Login/>
+                        <ResetPassword/>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,10 @@
+
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import { RecoilRoot } from 'recoil'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +19,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+
     <html lang="en">
       <body className={inter.className}>
-        
-        
-        <div>
-        {children}
-        </div>
-        
-        </body>
+        <>
+
+
+          <div>
+            {children}
+          </div>
+        </>
+      </body>
     </html>
+
   )
 }
