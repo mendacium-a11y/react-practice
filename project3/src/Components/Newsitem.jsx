@@ -5,6 +5,7 @@ export class Newsitem extends Component {
     const url = "https://newsapi.org/v2/everything?q=keyword&apiKey=496b0449ea5e4a9caa5d546a45f775a0"
     const data = await fetch(url)
     const data_json = data.json()
+    console.log(data_json)
   }
 
 
