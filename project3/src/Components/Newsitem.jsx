@@ -7,7 +7,7 @@ export class Newsitem extends Component {
 
   async componentDidMount() {
     try {
-      const url = "https://newsapi.org/v2/everything?q=keyword&apiKey=496b0449ea5e4a9caa5d546a45f775a0";
+      const url = "https://newsapi.org/v2/everything?q=keyword&apiKey=";
       const response = await fetch(url);
       const data = await response.json();
 
