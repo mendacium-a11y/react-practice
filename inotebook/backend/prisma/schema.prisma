@@ -10,6 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todo{
-  id String @id @default(uuid())
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  CreatedAt DateTime @default(now())
+}
+
+model Post {
+  id       String  @id @default(uuid())
+  title    String
+  content  String?
+  author   User    @relation(fields: [AuthorId], references: [id])
+  AuthorId String
 }
