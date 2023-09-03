@@ -4,6 +4,25 @@ const { PrismaClient } = require('@prisma/client')
 const { body, validationResult } = require('express-validator')
 const prisma = new PrismaClient()
 const bcrypt = require('bcryptjs')
+var jwt = require('jsonwebtoken');
+
+
+const JWT_SECRET = "helloEveryoneYouAreNowSignedIn"
+
+
+router.post('/del', async (req, res) => {
+    try {
+      // Use Prisma to delete all records in the User table
+      await prisma.user.deleteMany();
+  
+      // Send a success response
+      res.status(204).send();
+    } catch (error) {
+      console.error('Error deleting users:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
 
 //creating a route at /api/auth/createuser, listening for post requests
 //doesnt require auth, creating a new user
@@ -42,6 +61,38 @@ router.post('/createuser', [
     }
 
     
+})
+
+router.post('/login',[
+    body('email','enter valid email').isEmail(),
+    body('password','cannot be blank').exists()
+],async (req,res)=>{
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json({error:error.array()})
+    }
+
+    const { email,password } = req.body
+    try {
+        const user = await prisma.user.findUnique({where: {email}})
+
+        if(!user){
+            return res.status(400).json({"error":"wrong credentials"})
+        }
+
+        const passwordCompare = await bcrypt.compare(password, user.password)
+
+        if(!passwordCompare){
+            return res.status(400).json({"error":"wrong credential"})
+        }
+
+        const data = { user: { id:user.id } }
+        const authToken = jwt.sign(data,JWT_SECRET)
+        res.json(authToken)
+    } catch (error) {
+        console.error(error)
+        res.status(500).json("error")
+    }
 })
 
 module.exports = router
