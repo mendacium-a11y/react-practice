@@ -72,8 +72,8 @@ router.put('/updatenote/:id', fetchUser, async (req, res) => {
             return res.status(404).json("not found")
         }
 
-        if (note.AuthorId.toString() !== req.user.id){
-            return res.status(401).json({"error":"unauthorized access"})
+        if (note.AuthorId.toString() !== req.user.id) {
+            return res.status(401).json({ "error": "unauthorized access" })
         }
         await prisma.post.update({
             where: {
@@ -90,8 +90,32 @@ router.put('/updatenote/:id', fetchUser, async (req, res) => {
 
 
 //request to delte an existing note, login required
-router.delete('/deltenote/:id',fetchUser,async(req,res)=>{
-    
+router.delete('/deletenote/:id', fetchUser, async (req, res) => {
+    try {
+        var note = await prisma.post.findUnique({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        if (!note) {
+            return res.status(404).json("not found")
+        }
+
+        if (note.AuthorId.toString() !== req.user.id) {
+            return res.status(401).json({ "error": "unauthorized access" })
+        }
+        await prisma.post.delete({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.status(200).json({ "message": "note deleted" })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ error: 'Internal server error' });
+    }
 })
 
 module.exports = router
