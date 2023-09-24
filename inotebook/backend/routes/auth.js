@@ -11,18 +11,18 @@ const fetchUser = require("../middleware/fetchUser")
 // const JWT_SECRET = "helloEveryoneYouAreNowSignedIn"
 
 
-router.post('/del', async (req, res) => {
-    try {
-        // Use Prisma to delete all records in the User table
-        await prisma.user.deleteMany();
+// router.post('/del', async (req, res) => {
+//     try {
+//         // Use Prisma to delete all records in the User table
+//         await prisma.user.deleteMany();
 
-        // Send a success response
-        res.status(204).send();
-    } catch (error) {
-        console.error('Error deleting users:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+//         // Send a success response
+//         res.status(204).send();
+//     } catch (error) {
+//         console.error('Error deleting users:', error);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// });
 
 
 //route at /api/auth/createuser, listening for post requests
@@ -71,7 +71,7 @@ router.post('/login', [
 ], async (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-        return res.status(400).json({ error: error.array() })
+        return res.status(400).json({ error: errors.array() })
     }
 
     const { email, password } = req.body
