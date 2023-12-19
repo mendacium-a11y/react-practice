@@ -1,0 +1,41 @@
+name: Default Message on Issue/PR
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-default-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add default message
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_or_pr_number = context.payload.issue ? context.payload.issue.number : context.payload.pull_request.number;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            const defaultMessage = "Thank you for opening this issue/PR! We will review it as soon as possible.";
+
+            const { data: comments } = await github.issues.listComments({
+              issue_number: issue_or_pr_number,
+              owner: owner,
+              repo: repo,
+            });
+
+            const commentExists = comments.some(comment => comment.body === defaultMessage);
+
+            if (!commentExists) {
+              await github.issues.createComment({
+                issue_number: issue_or_pr_number,
+                owner: owner,
+                repo: repo,
+                body: defaultMessage,
+              });
+            } else {
+              console.log('Default message already exists.');
+            }
